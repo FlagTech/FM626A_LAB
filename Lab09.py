@@ -6,7 +6,7 @@ low_loss = [740, 740, 740, 800, 800, 800, 900, 900, 900, 1000]
 # 電話按鍵聲 1、2、...、9、0 高頻閾值
 high_loss = [1269, 1395, 1600, 1269, 1395, 1600, 1269, 1395, 1600, 1395]
 
-'''收集判斷的按鍵, 將判斷數字的次數儲存至 list 內'''
+#收集判斷的按鍵, 將判斷數字的次數儲存至串列內
 def which_num(occur):
     for j in range(10):
         fft = FFT(64,3000,34) # 執行一次
@@ -40,7 +40,7 @@ def judge(mean_mag):
             # 收集低頻區間連續兩個的頻率強度
             low_conti = magnitude[13+i] + magnitude[14+i]
             # 收集高頻區間連續兩個的頻率強度
-            high_conti = magnitude[23+i] + magnitude[21 +i] 
+            high_conti = magnitude[22+i] + magnitude[23+i] 
             
             # 連續強度是否佔低頻區間的 40 %以上
             if (low_conti > low_sum*0.4): 
